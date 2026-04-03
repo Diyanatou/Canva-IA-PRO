@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-brand: #ff0050; /* A bold accent color like a creative tool */
+  --color-studio-bg: #0f0f11;
+  --color-studio-card: #1a1a1d;
+  --color-studio-border: #2a2a2e;
+}
+
+@layer base {
+  body {
+    @apply bg-studio-bg text-white antialiased min-h-screen overflow-x-hidden font-sans;
+  }
+}
+
+@layer components {
+  .studio-card {
+    @apply bg-studio-card border border-studio-border rounded-xl p-6 transition-all duration-200;
+  }
+
+  .studio-input {
+    @apply bg-[#09090b] border border-studio-border rounded-lg p-4 focus:border-brand focus:ring-1 focus:ring-brand outline-none transition-all;
+  }
+
+  .btn-primary {
+    @apply bg-white text-black hover:bg-gray-200 active:scale-[0.98] px-6 py-3 rounded-lg font-semibold transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .btn-secondary {
+    @apply bg-studio-card border border-studio-border hover:bg-studio-border text-white px-4 py-2 rounded-lg transition-all flex items-center justify-center gap-2;
+  }
+
+  .studio-label {
+    @apply text-xs font-bold uppercase tracking-widest text-gray-500 mb-2 block;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a2e;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a3e;
+}
